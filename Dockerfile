@@ -7,8 +7,7 @@ WORKDIR /home/node
 
 COPY . /home/node
 
-RUN npm run build \
-    && npm prune --production
+RUN npm run build
 
 FROM node:14-alpine
 
