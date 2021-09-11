@@ -18,7 +18,7 @@ USER node
 WORKDIR /home/node
 
 COPY --from=builder /home/node/package*.json /home/node/
-COPY --from=builder /home/node/node_modules/ /home/node/node_modules/
+RUN npm install --production
 COPY --from=builder /home/node/dist/ /home/node/dist/
 
-CMD ["node", "dist/server.js"]
+CMD ["node", "dist/main.js"]

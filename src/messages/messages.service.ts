@@ -1,5 +1,6 @@
 import { Logger, Injectable } from "@nestjs/common";
 import { MessagesRepository } from "./messages.repository";
+import { hostname } from "os";
 
 @Injectable()
 export class MessagesService {
@@ -13,12 +14,14 @@ export class MessagesService {
   }
 
   findAll() {
-    this.logger.log(`searching ...`);
+    const date = Date.now();
+    this.logger.log(`${hostname} - ${date}`);
     return this.messagesRepo.findAll();
   }
 
   create(content: string) {
-    this.logger.warn(`creating: ${content}`);
+    const date = Date.now();
+    this.logger.log(`${hostname} - ${date} : ${content}`);
     return this.messagesRepo.create(content);
   }
 }
