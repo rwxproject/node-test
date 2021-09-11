@@ -21,4 +21,4 @@ jobs:
       - name: Build Docker image
         run: docker build . --file Dockerfile --tag rwxproject/node-test:$(date +%s)
       - name: Push Docker image
-        run: docker push ${{secrets.DOCKER_USER}}/node-test
+        run: docker push rwxproject/node-test
