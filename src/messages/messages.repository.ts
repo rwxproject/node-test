@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Options } from "@nestjs/common";
 import { readFile, writeFile } from "fs/promises";
 
 Injectable();
