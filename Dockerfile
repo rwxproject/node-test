@@ -19,6 +19,7 @@ WORKDIR /home/node
 
 COPY --from=builder /home/node/package*.json /home/node/
 RUN npm install --production
+COPY --from=builder /home/node/messages.json /home/node/dist/
 COPY --from=builder /home/node/dist/ /home/node/dist/
 
 CMD ["node", "dist/main.js"]
